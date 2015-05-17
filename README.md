@@ -2,6 +2,8 @@
 
 Counts word in UTF8 encoded,'\n' delimited text received from network every second.Application runs on localhost:9999
 
+Also it is applied windowed operations and stateful operation on DStream
+
 #How to run
 
 To run this on your local machine,firstly you need to run a Netcat server.
