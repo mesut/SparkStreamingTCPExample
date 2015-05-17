@@ -1,6 +1,6 @@
 # SparkStreamingTCPExample
 
-Counts word in UTF8 encoded,'\n' delimited text received from network every second.
+Counts word in UTF8 encoded,'\n' delimited text received from network every second.Application runs on localhost:9999
 
 #How to run
 
