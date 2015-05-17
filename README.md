@@ -2,7 +2,7 @@
 
 Counts word in UTF8 encoded,'\n' delimited text received from network every second.Application runs on localhost:9999
 
-Also it is applied windowed operations and stateful operation on DStream
+Also it is applied windowed operations and stateful operation on DStream.With windowed operation,it is generating word counts over last 30 seconds of data, every 10 seconds.
 
 #How to run
 
