@@ -34,7 +34,8 @@ object NetworkWordCount {
     // Replication necessary in distributed scenario for fault tolerance.
     val lines = ssc.socketTextStream("localhost", 9999, StorageLevel.MEMORY_AND_DISK_SER)
     val words = lines.flatMap(_.split(" "))
-    val wordCounts = words.map(x => (x, 1)).reduceByKeyAndWindow((a:Int,b:Int) => (a + b), Seconds(30), Seconds(10))
+    val wordCounts = words.map(x => (x, 1))
+    val windowedCount =  wordCounts.reduceByKeyAndWindow((a:Int,b:Int) => (a + b), Seconds(10), Seconds(2))
     val stateStrem =  wordCounts.updateStateByKey[Int](updateFunction _)
     stateStrem.print()
     ssc.start()
